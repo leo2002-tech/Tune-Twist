@@ -1,0 +1,36 @@
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50% { opacity: 0.5; transform: scaleY(0.7); }
+}
+
+/* Custom audio player styling */
+audio {
+  --media-controls: #ffffff20;
+  --media-controls-hover: #ffffff30;
+  
+  &::-webkit-media-controls-panel {
+    background-color: transparent;
+  }
+  
+  &::-webkit-media-controls-play-button {
+    background-color: var(--media-controls);
+    border-radius: 50%;
+    transition: all 0.2s;
+    
+    &:hover {
+      background-color: var(--media-controls-hover);
+    }
+  }
+  
+  &::-webkit-media-controls-timeline {
+    background-color: var(--media-controls);
+    border-radius: 2px;
+    height: 3px;
+    margin: 0 10px;
+  }
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  color: white;
+}
